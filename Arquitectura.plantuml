@@ -1,0 +1,28 @@
+@startuml
+node contenedor1{
+package "Servicio 1" {
+    interface Person_api {
+        + ConsultarCursoMatriculado()
+        + AgregarAlumnos()
+    }
+}
+
+package "Servicio 2" {
+    interface Cursos_api {
+        + ConsultarCursosDisponibles()
+        + AgregarCursos()
+    }
+}
+
+package "Servicio 3" {
+    interface Docente_api {
+        + ConsultarDocente()
+        + AsignarCurso()
+    }
+}
+
+Person_api -- Cursos_api: Usa
+Person_api -- Docente_api: Usa
+Cursos_api -- Docente_api
+}
+@enduml

@@ -1,0 +1,30 @@
+services:
+  person_api:
+    build:
+      context: ./person_api
+      dockerfile: Dockerfile
+    #image: nodejs
+    container_name: person_api
+    restart: unless-stopped
+    ports:
+      - "80:8080"
+  
+  courses_api:
+    build:
+      context: ./courses_api
+      dockerfile: Dockerfile
+    #image: nodejs
+    container_name: courses_api
+    restart: unless-stopped
+    ports:
+      - "81:8080"
+
+  teacher_api:
+    build:
+      context: ./teacher_api
+      dockerfile: Dockerfile
+    #image: nodejs
+    container_name: teacher_api
+    restart: unless-stopped
+    ports:
+      - "82:8080"
